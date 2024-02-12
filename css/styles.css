@@ -11220,7 +11220,7 @@ header.masthead .masthead-heading {
     float: left;
     width: 41%;
     padding: 0 20px 20px 30px;
-    text-align: right;
+    text-align: center;
   }
   .timeline > li .timeline-image {
     left: 50%;
@@ -11236,7 +11236,7 @@ header.masthead .masthead-heading {
   .timeline > li.timeline-inverted > .timeline-panel {
     float: right;
     padding: 0 30px 20px 20px;
-    text-align: left;
+    text-align: center;
   }
 }
 @media (min-width: 992px) {
