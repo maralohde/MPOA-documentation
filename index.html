@@ -100,9 +100,35 @@
                     <h2 class="section-heading text-uppercase">Installation</h2>
                     <h3 class="section-subheading text-muted">Install nextflow and docker or singularity.</h3>
                 </div>
+                <!-- 1st part -->
                 <div class="row text-left">
-                    <class class="col-md-12">
-                        <h4>1.1 Install Nextflow (the workflow manager) & Java (dependency)</h4>   
+                    <div class="col-md-12">
+                        <div class="h3 my-2 text-info"><br>1. Install Nextflow and Java</div>   
+                        <p>To run the workflow the workflow manager <a href="https://nextflow.io/">Nextflow</a> and its dependency java run time (default-jre) needs to be installed.</p>
+                        <p>Install java run time via:</p>
+                        <pre><code class="language-bash"> sudo apt install -y default-jre</code></pre>
+                        <p>Install Nextflow (this creates a nextflow file at your current location):</p>
+                        <pre><code class="language-html">curl -s https://get.nextflow.io | bash </code></pre>
+                        <p> Optional: Move the executable "nextflow" to the $PATH location (so you can execute it from everywhere):</p>
+                        <pre><code class="language-html">sudo mv nextflow /bin && sudo chmod 770 /bin/nextflow</code></pre>
+                    </div>
+                </div>
+                <!-- 2nd part -->
+                <div class="row text-left">
+                    <!-- left -->
+                    <div class="col-md-5">
+                        <div class="h3 my-2  text-info"><br>2. Install Docker</div>   
+                        <p>Full <a href="https://docs.docker.com/engine/install/">Docker</a> instalaltion can be found here for  <a href="https://docs.docker.com/engine/install/ubuntu/">here for ubuntu</a><div class=""></div></p>
+                        <p>If you never worked with docker we recommend to install it via apt install</p>
+                        <pre><code class="language-bash"> ....</code></pre>
+                        <p>Install Nextflow (this creates a nextflow file at your current location):</p>
+                        <pre><code class="language-html">curl -s https://get.nextflow.io | bash </code></pre>
+                    </div>
+                    <!-- or -->
+                    <div class="col-md-2 text-center text-danger"><div class="h3 my-2"><br><br><br><br><br><br>OR  </div>   </div>
+                    <!-- right -->
+                    <div class="col-md-5">
+                        <div class="h3 my-2  text-info"><br>2. Install Singularity </div>    
                         <p>To run the workflow Nextflow and java run time (default-jre) need to be installed.</p>
                         <p>Install java run time via:</p>
                         <pre><code class="language-bash"> sudo apt install -y default-jre</code></pre>
@@ -110,8 +136,69 @@
                         <pre><code class="language-html">curl -s https://get.nextflow.io | bash </code></pre>
                         <p> Optional: Move the executable "nextflow" to the $PATH location (so you can execute it from everywhere):</p>
                         <pre><code class="language-html">sudo mv nextflow /bin && sudo chmod 770 /bin/nextflow</code></pre>
-                    </class>
+                    </div>
+                    <!-- last part -->
+                    <div class="row text-left">
+                        <div class="col-md-12">
+                            <div class="h3 my-2  text-info"><br>3. Validate the installation </div>     
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, perferendis? Mollitia perspiciatis obcaecati tempore beatae veritatis ex, impedit dolor cumque velit ullam aut qui. Pariatur fuga id perferendis rem recusandae..</p>
+                            <pre><code class="language-shell"> nextflow run replikation/MPOA --help</code></pre>
+                            you should see something like this: <br>
+                            <pre><code class="language-shell">____________________________________________________________________________________________
+    
+N E X T F L O W  ~  version 23.10.1
+Launching `/home/mara/gits/MPOA/main.nf` [gloomy_perlman] DSL2 - revision: c540ed0e6d
+
+____________________________________________________________________________________________
+
+Workflow: MPOA - Mask bases in Pathogens for Outbreak Analysis
+
+Usage example:
+nextflow run replikation/MPOA --fastq '*.fastq' --fasta '*.fasta' -profile local,docker
+
+Inputs (Mandatory):
+    --fastq         e.g.: 'sample1.fastq' or '*.fastq' or '*/*.fastq'
+    --fasta         e.g.: 'sample1.fasta' or '*.fasta' 
+Reads and Genome files are matched based on the first word before the first dot in their filename.
+    Matches: Sample1.clean.fasta Sample1.fastq.gz
+    This NOT: clean.Sample1.clean.fasta Sample1.fastq.gz
+
+Workflow settings  
+    --frequency     Turns on frequency calculation of bases (default: false)
+    --depth X       Masks regions with a sequencing depth below X with N's [default: 10]
+    --motif X       Upstream and Downstream length of sequence Motif [default: 5]
+
+Options  (optional)
+    --keep_coordinates     Output all reference positions, including low coverage regions.
+                        Ignore insertions in the consensus and mask deletions with "*".
+                        This will add '-aa --show-ins no --show-del no' to samtools consensus [default: false]
+    --cores                Amount of cores for a process (local use) [default: 10]
+    --max_cores            Max amount of cores for poreCov to use (local use) [default: 20]
+    --memory               Available memory [default: 16]
+    --output               Name of the result folder [default: results]
+    --workdir              Defines the path to the temporary files [default: work/nextflow-MPOA]
+    --cachedir             Defines the path where singularity images are cached [default: singularity-images]
+
+Execution/Engine profiles (choose executer and engine
+MPOA supports profiles to run via different Executers and Engines 
+examples:
+    -profile local,docker
+    -profile slurm,singularity
+
+    Executer (choose one):
+    local
+    slurm
+    Engines (choose one):
+    docker
+    singularity
+
+    Note: The singularity profile automatically passes the following environment variables to the container. 
+    to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, FTP_PROXY, ftp_proxy
+                            </code></pre>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
         </section>
 
