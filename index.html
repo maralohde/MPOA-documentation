@@ -18,6 +18,9 @@
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Flatly theme -->
         <link href="css/flatly_bootstrap.css" rel="stylesheet" />
+        <!-- code block theme -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+        <link href="css/style_codeblock.css" rel="stylesheet" />
 
     </head>
     <body id="page-top">
@@ -89,15 +92,23 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Installation</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Install nextflow and docker or singularity.</h3>
                 </div>
-                        <p>1.1 required Nextflow (the workflow manager) & Java</p>   
+                <div class="row text-left">
+                    <class class="col-md-12">
+                        <h4>1.1 Install Nextflow (the workflow manager) & Java (dependency)</h4>   
                         <p>To run the workflow Nextflow and java run time (default-jre) need to be installed.</p>
                         <p>Install java run time via:</p>
-                        <pre><code class="language-javascript">sudo apt install -y default-jre
+                        <pre><code class="language-bash">     
+                            sudo apt install -y default-jre
                         </code></pre>
                         <p>Install Nextflow via:</p>
                         <pre><code class="language-html">curl -s https://get.nextflow.io | bash && sudo mv nextflow /bin && sudo chmod 770 /bin/nextflow</code></pre>
+
+                    </class>
+
+                </div>
+
             </div>
         </section>
 <!-- Quick Start-->
@@ -530,8 +541,11 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js"></script>
+        
         <script src="js/script.js"></script>
+        <!-- codeblock script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js"></script>
+        <script src="js/script_codeblock.js"></script>
     
     </body>
 </html>
