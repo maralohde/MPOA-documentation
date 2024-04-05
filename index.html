@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>MPOA - Documentation</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon1.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -32,7 +32,7 @@
 <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <!-- <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a> -->
+                <a class="navbar-brand" href="#page-top"> <a class="text-decoration-none fs-6 text-danger font-body-font-family fs-5" href="https://github.com/replikation/MPOA">MPOA REPOSITORY</a></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -73,26 +73,25 @@
                             <i class="fas fa-download fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Installation</h4>
-                        <p class="text-muted">tldr installs</p>
+                        <p class="text-muted">git clone https://github.com/replikation/MPOA.git</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-success"></i>
-                            <i class="fas fa-cogs fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-gears fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Run MPOA</h4>
-                        <p class="text-muted">example run command</p>
+                        <p class="text-muted">nextflow run replikation/MPOA --fastq '*.fastq.gz' --fasta '*.fasta' -profile local,docker</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-success"></i>
                             <i class="fas fa-check fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Interpretation</h4>
-                        <p class="text-muted">refer to the interpretation section here.</p>
+                        <h4 class="my-3"><a class=" text-decoration-none font-body-font-family" href=#Interpretation>Interpretation</a></h4>
                     </div>
                 </div>
-            </div>
+            </div> 
         </section>
 
 <!-- Installation-->
@@ -106,50 +105,44 @@
                 <div class="row text-left">
                     <div class="col-md-12">
                         <div class="h3 my-2 text-info"><br>1. Install Nextflow and Java</div>   
-                        <p>To run the workflow the workflow manager <a href="https://nextflow.io/">Nextflow</a> and its dependency java run time (default-jre) needs to be installed.</p>
+                        <p>To run MPOA the workflow manager <a href="https://nextflow.io/">Nextflow</a> and its dependency java run time (default-jre) needs to be installed.</p>
                         <p>Install java run time via:</p>
                         <pre><code class="language-bash"> sudo apt install -y default-jre</code></pre>
                         <p>Install Nextflow (this creates a nextflow file at your current location):</p>
                         <pre><code class="language-bash">curl -s https://get.nextflow.io | bash </code></pre>
-                        <p> Optional: Move the executable "nextflow" to the $PATH location (so you can execute it from everywhere):</p>
+                        <p> Optional: Move the executable "nextflow" to the <code> $PATH</code> location (so you can execute it from everywhere):</p>
                         <pre><code class="language-bash">sudo mv nextflow /bin && sudo chmod 770 /bin/nextflow</code></pre>
                     </div>
                 </div>
             <!-- 2nd part -->
                 <div class="row text-left">
-                <!-- left -->
+                <!-- left:Docker -->
                     <div class="col-md-5">
                         <div class="h3 my-2  text-info"><br>2. Install Docker</div>   
-                        <p>Full <a href="https://docs.docker.com/engine/install/">Docker</a> instalaltion can be found here for  <a href="https://docs.docker.com/engine/install/ubuntu/">here for ubuntu</a><div class=""></div></p>
-                        <p>If you never worked with docker we recommend to install it via apt install</p>
-                        <pre><code class="language-bash"> ....</code></pre>
+                        <p>Full <a href="https://docs.docker.com/engine/install/">Docker</a> installation can be found here for  <a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>:<div class=""></div></p>
+                        <p>If you never worked with Docker we recommend to install it via apt install:</p>
+                        <pre><code class="language-bash"> sudo apt install -y docker </code></pre>
+                        <pre><code class="language-bash"> sudo usermod -a -G docker $USER </code></pre>
                         <p>Install Nextflow (this creates a nextflow file at your current location):</p>
                         <pre><code class="language-bash">curl -s https://get.nextflow.io | bash </code></pre>
                     </div>
                 <!-- or -->
                     <div class="col-md-2 text-center text-danger"><div class="h3 my-2"><br><br><br><br><br><br>OR  </div>   </div>
-                <!-- right -->
+                <!-- right:Singularity -->
                     <div class="col-md-5">
-                        <div class="h3 my-2  text-info"><br>2. Install Singularity </div>    
-                        <p>To run the workflow Nextflow and java run time (default-jre) need to be installed.</p>
-                        <p>Install java run time via:</p>
-                        <pre><code class="language-shell"> sudo apt install -y default-jre</code></pre>
-                        <p>Install Nextflow (this creates a nextflow file at your current location):</p>
-                        <pre><code class="language-shell">curl -s https://get.nextflow.io | bash </code></pre>
-                        <p> Optional: Move the executable "nextflow" to the $PATH location (so you can execute it from everywhere):</p>
-                        <pre><code class="language-shell">sudo mv nextflow /bin && sudo chmod 770 /bin/nextflow</code></pre>
+                        <div class="h3 my-2  text-info"><br>2. Install Singularity </div>
+                        <p>As an alternative to Docker you can also install and use Singularity, e.g. on a HPC. <br><br>Singularity can be installed <a href="https://apptainer.org/documentation/">here</a>.<br><br> Note, that with Singularity the following environment variables are automatically passed to the container to ensure execution on HPCs: <code style="color:black;">HTTPS_PROXY</code>, <code style="color:black;">HTTP_PROXY</code>, <code style="color:black;">http_proxy</code>, <code style="color:black;">https_proxy</code>, <code style="color:black;">FTP_PROXY</code> and <code style="color:black;">ftp_proxy</code>.</p> 
                     </div>
             <!-- last part -->
                     <div class="row text-left">
                         <div class="col-md-12">
                             <div class="h3 my-2  text-info"><br>3. Validate the installation </div>     
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, perferendis? Mollitia perspiciatis obcaecati tempore beatae veritatis ex, impedit dolor cumque velit ullam aut qui. Pariatur fuga id perferendis rem recusandae..</p>
                             <pre><code class="language-shell"> nextflow run replikation/MPOA --help</code></pre>
-                            you should see something like this: <br>
-                            <pre><code class="language-java">____________________________________________________________________________________________
+                            <p> <br> <h6>If everything is installed correctly, the MPOA help message should now be displayed in your terminal!</h6></p>
+                            <!-- <pre><code class="language-java">____________________________________________________________________________________________
     
 N E X T F L O W  ~  version 23.10.1
-Launching `/home/mara/gits/MPOA/main.nf` [gloomy_perlman] DSL2 - revision: c540ed0e6d
+Launching `/home/mara/gits/MPOA/main.nf` [curious_ramanujan] DSL2 - revision: c8348812a3
 
 ____________________________________________________________________________________________
 
@@ -166,9 +159,10 @@ Reads and Genome files are matched based on the first word before the first dot 
     This NOT: clean.Sample1.clean.fasta Sample1.fastq.gz
 
 Workflow settings  
-    --frequency     Turns on frequency calculation of bases (default: false)
+    --frequency     Turns on frequency calculation of bases [default: false]
     --depth X       Masks regions with a sequencing depth below X with N's [default: 10]
     --motif X       Upstream and Downstream length of sequence Motif [default: 5]
+    --mapper        Read mapper to use: minimap2, bwa [default: minimap2]
 
 Options  (optional)
     --keep_coordinates     Output all reference positions, including low coverage regions.
@@ -181,7 +175,7 @@ Options  (optional)
     --workdir              Defines the path to the temporary files [default: work/nextflow-MPOA]
     --cachedir             Defines the path where singularity images are cached [default: singularity-images]
 
-Execution/Engine profiles (choose executer and engine
+Execution/Engine profiles (choose executer and engine)
 MPOA supports profiles to run via different Executers and Engines 
 examples:
     -profile local,docker
@@ -194,9 +188,9 @@ examples:
     docker
     singularity
 
-    Note: The singularity profile automatically passes the following environment variables to the container. 
-    to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, FTP_PROXY, ftp_proxy
-                            </code></pre>
+Note: The singularity profile automatically passes the following environment variables to the container. 
+to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, FTP_PROXY, ftp_proxy
+                            </code></pre> -->
                         </div>
                     </div>
                 </div>
@@ -212,7 +206,9 @@ examples:
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                        <div i class="timeline-image"><img class="rounded-circle img-fluid"/><i class="fas fa-file-code fa-stack-2x fs-2"></i></div>
+                        <!-- <i class="fas fa-circle fa-stack-2x text-success"></i> -->
+                        <!-- <i class="fas fa-gears fa-stack-1x fa-inverse"></i> -->
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Prepare Read Data</h4>
@@ -221,39 +217,33 @@ examples:
                             <div class="timeline-body">
                                 <p class="text-muted">Make sure that you have one read file <br>(<code>.fastq</code> or <code>.fastq.gz</code>) per sample.
                                 You can combine multiple read files into one via: 
-                                <br></pre><code>cat *.fastq > sample1_all.fastq</code><br>or <br> <code>cat *.fastq.gz > sample1_all.fastq.gz</code>
+                                <br></pre><code>cat *.fastq > sample1_all.fastq</code><br>or <br><code>cat *.fastq.gz > sample1_all.fastq.gz</code>
                                 </p>
                             </div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid"/><i class=" fas fa-file-signature fa-stack-2x fs-2"></i></div>
+                        
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Rename files</h4>
                                 <h5 class="subheading">So MPOA can auto detect</h5>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">Reads and Genome files are matched based on the first word before the first dot in their filename.
+                                <br>
+                                <code style="color:green;">YES: Sample1.clean.fasta & Sample1.fastq.gz</code><br><code>NO: clean.Sample1.fasta & Sample1.fastq.gz</code>
+                            </p></div>
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Prepare data</h4>
-                                <h5 class="subheading">nearly done</h5>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted"><i>Optional step if you know how to handle paths.</i> <br> We create two dirs via: <br> <code>mkdir fastq/ fastq/</code> <br> and move the read files to fastq/ and genomes to fasta/</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid"/><i class="fas fa-laptop-code fa-stack-2x fs-2"></i></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Open terminal</h4>
                                 <h5 class="subheading">In current dir</h5>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Open your terminal where you have access o the fastq and fasta files. <br>When following above step you should see fastq/ and fasta/ directories</p></div>
+                            <div class="timeline-body"><p class="text-muted">Open your terminal where you have access to the fastq and fasta files.</div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -270,8 +260,7 @@ examples:
                 </ul>
                 <div class="row text-left">
                     <div class="col-md-12 text-center">
-                        <p>.....</p>
-                        <pre><code class="language-bash"> nextflow run --fastq fastq/* --fasta fasta/* usw.</code></pre>
+                        <pre><code class="language-bash"> nextflow run replikation/MPOA --fasta '*.fasta' --fastq '*.fastq.gz' -profile local,docker -r 1.4.1</code></pre>
                     </div>
                 </div>
             </div>
@@ -284,45 +273,49 @@ examples:
                     <h2 class="section-heading text-uppercase">Interpretation</h2>
                     <h3 class="section-subheading text-muted">Some explanations and interpretation helps.</h3>
                 </div>
-            <!-- Big part -->
+            <!-- Ambiguous Positions -->
                 <div class="row text-left">
                     <div class="col-md-12">
-                        <div class="h3 my-2 text-info"><br>Big section</div>   
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam quos vero aliquid incidunt qui, itaque sapiente, expedita dicta eveniet illo impedit praesentium natus deleniti voluptates inventore autem non, velit rerum. <a href="https://nextflow.io/">Link</a></p>
-
+                        <div class="h3 my-2 text-info"><br>CSV file with summary of ambiguous/masked positions</div>   
+                        <p> The default output is a CSV file summarizing the masked positions per sample. You found the information on how many positions were masked by the respective IUPAC base (N, W, S, M, K, R, Y, B, D, H, V) in <code>  masked_bases_summary.csv</code> . Depth masking (N) is performed if fewer than ten bases are present at one position. The masked positions on the entire genome and only on the chromosome are shown for each sample.</p>
                     </div>
                 </div>
-            <!-- Split part -->
-                <div class="row text-left">
-                <!-- left -->
-                    <div class="col-md-6">
-                        <div class="h3 my-2  text-info"><br>Left</div>   
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis illo doloremque voluptate rem enim neque sapiente totam magni ipsam repellendus, est, aspernatur illum repudiandae maxime? Officiis totam ex facere error?
-                        </p>
-                    </div>
-                <!-- right -->
-                    <div class="col-md-6">
-                        <div class="h3 my-2  text-info"><br>Right </div>    
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet numquam nobis voluptatum praesentium, eaque saepe, unde non mollitia expedita minus hic quaerat. Exercitationem reprehenderit odit asperiores officiis impedit. Alias,
-                        </p>    
-                    </div>
+                <div class ="row text-left">
+                    <pre><code class="language-shell"> 
+                        name,type,N(ATCG),W(AT),S(CG),M(AC),K(TG),R(AG),Y(TC),B(TCG),D(ATG),H(ATC),V(ACG)
+                        sample1,genome,1,0,0,1,0,14,12,0,0,0,0,
+                        sample1,chromosome,1,0,0,1,0,12,9,0,0,0,0,
+                        sample2,genome,3108,100,88,109,110,396,405,0,0,0,0,
+                        sample2,chromosome,19,0,2,0,4,200,181,0,0,0,0,
+                        sample3,genome,9534,6,14,20,10,310,293,0,0,0,0,
+                        sample3,chromosome,17,0,4,4,0,266,254,0,0,0,0,
+                    </code></pre>
                 </div>
-            <!-- Split with picspart -->
+            <!-- Sequence Logo -->
                 <div class="row text-left">
-                <!-- left -->
+                    <div class="h3 my-2  text-info"><br>Sequence Logo <td></div> 
+                <!-- left:Figure -->
                     <div class="col-md-6">
-                        <div class="h3 my-2  text-info"><br>Left side</div>   
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis illo doloremque voluptate rem enim neque sapiente totam magni ipsam repellendus, est, aspernatur illum repudiandae maxime? Officiis totam ex facere error?
+                        <img src="assets/BK16641_k14.svg" class="img-fluid rounded mx-auto" alt="Sequence Logo">
+                    </div>
+                <!-- right:Text -->
+                    <div class="col-md-6">
+                        <div class="h3 my-2  text-info"><br> </div>    
+                        <p> 
+                            A graphical presentation of all ambiguous positions and their surrounding bases per analyzed sample. The overall height of each stack indicates the sequence conservation at a position (measured in bits)
+, whereas the height of symbols within the stack reflects the relative frequency of the corresponding
+base at that position.
+In default mode, the sequence logo shows five bases up and downstream of the ambiguous position masked by IUPAC-Code. The length of the logo can be modified using the <code>--motif</code> flag.  
                         </p>
                     </div>
-                <!-- right -->
-                    <div class="col-md-6">
-                        <div class="h3 my-2  text-info"><br>Right figure</div>    
-                        <img src="assets/logo.jpg" class="img-fluid rounded mx-auto" alt="...">
-                    </div>
+            <!-- Frequency Plot -->                
+            <div class="col-md-12 center">
+                <div class="h3 my-2  text-info"><br>Frequency Plot</div>   
+                <p>
+                A violin chart is created when the <code> --frequency </code> flag is used. The plot is build from all analyzed samples of the run. For each ambiguous position found by aligning reads to their reference, the percentage occurrence of the bases within the reads is calculated. The orientation of the strand (forward or reverse) is determined and displayed as data points in two plots per position.                </p>
+                <img src="assets/KP_33_kit14_minimap_frequency.svg" class="img-fluid rounded mx-auto" alt="Frequency Plot">
+            </div>
+            <!-- End Section  -->
                 </div>                
             </div>
         </section>
@@ -333,13 +326,12 @@ examples:
                 <h2 class="section-heading ">Citation</h2>
                 <h4>Nanopore sequencing for accurate bacterial outbreak tracing</h5>
                 <p><i>
-                    Mara Lohde,  Gabriel E. Wagner, Johanna Dabernig-Heinz,  Adrian Viehweger, Sascha D. Braun, Stefan Monecke, Celia Diezel, Claudia Stein, Mike Marquet, Ralf Ehricht,   Mathias W. Pletz, Christian Brandt
+                    Mara Lohde, Gabriel E. Wagner, Johanna Dabernig-Heinz, Adrian Viehweger, Sascha D. Braun, Stefan Monecke, Celia Diezel, Claudia Stein, Mike Marquet, Ralf Ehricht, Mathias W. Pletz, Christian Brandt
                 </i></p>
                 <p><a href="https://doi.org/10.1101/2023.09.15.556300">doi.org/10.1101/2023.09.15.556300</a></p>
 
             </div>
         </section>
-
 
 <!-- FAQ --->
         <section class="page-section bg-light" id="faq">
@@ -365,12 +357,12 @@ examples:
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Accordion Item #2
+                        How to run the lates release
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <strong>This is the second item's accordion body.</strong><br> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          <strong><a href="https://github.com/replikation/MPOA/releases">MPOA Releases</a></strong><br> If you want to run a specific release version of MPOA, use the <code>-r</code> flag and the version you want to execute. <br>For example: <br><code> nextflow run replikation/MPOA --fasta sample1.fasta --fastq sample1.fastq.gz -profile local,docker -r 1.4.1</code>
                         </div>
                       </div>
                     </div>
@@ -383,7 +375,7 @@ examples:
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <strong>Head over to MPOA`s <a href="https://github.com/replikation/MPOA/issues">issue sections</a></strong><br> Use search first, maybe someone had the same issue already. if not create a <a href="https://github.com/replikation/MPOA/issues/new">new issue</a>.
+                          <strong>Head over to MPOA`s <a href="https://github.com/replikation/MPOA/issues">issue sections</a></strong><br> Use search first, maybe someone had the same issue already. If not create a <a href="https://github.com/replikation/MPOA/issues/new">new issue</a>.
                         </div>
                       </div>
                     </div>
@@ -392,8 +384,6 @@ examples:
                 </div>
             </div></div>
         </section>
-
-
 <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">

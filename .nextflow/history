@@ -1,0 +1,9 @@
+2024-04-03 10:35:54	-	agitated_lagrange	-	7089a57e82d345dc604a361f1de44085756c962e	7d3ee3ef-2912-4c14-82d9-5aca1dea34a7	nextflow run replikation/MPOA --version
+2024-04-03 10:51:38	-	nauseous_lamarck	-	7089a57e82d345dc604a361f1de44085756c962e	8249abbe-19b5-4201-b064-de67af205bff	nextflow run replikation/MPOA --help
+2024-04-03 10:53:25	-	romantic_archimedes	-	7089a57e82d345dc604a361f1de44085756c962e	3b6b0299-3e7d-465d-af1b-8a2c41538524	nextflow run replikation/MPOA --help
+2024-04-03 10:54:26	-	nasty_tuckerman	-	7089a57e82d345dc604a361f1de44085756c962e	28d2ab75-05c0-4620-a5da-6fb3ba64cc9f	nextflow run replikation/MPOA --help
+2024-04-03 10:58:26	-	reverent_dalembert	-	7089a57e82d345dc604a361f1de44085756c962e	9f37bb90-eb9b-4bcf-8ce2-c9eb7e104afd	nextflow run replikation/MPOA --help
+2024-04-03 11:03:19	-	infallible_majorana	-	7089a57e82d345dc604a361f1de44085756c962e	54aa2ded-f8a1-459a-a95f-2e764897628c	nextflow run replikation/MPOA --help
+2024-04-03 11:53:28	-	serene_caravaggio	-	7089a57e82d345dc604a361f1de44085756c962e	a5f9c879-c282-44ce-a76f-ddda5112bd29	nextflow run replikation/MPOA --help
+2024-04-03 11:53:44	-	modest_miescher	-	7089a57e82d345dc604a361f1de44085756c962e	f8a1a676-0d0f-4ee0-87c6-d9bbd45dd102	nextflow run replikation/MPOA --fasta
+2024-04-03 11:54:04	-	friendly_blackwell	-	7089a57e82d345dc604a361f1de44085756c962e	25a8f3d0-93e4-46ca-b6c5-215dc628e636	nextflow run replikation/MPOA -profile local,docker
