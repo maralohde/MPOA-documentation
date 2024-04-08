@@ -32,19 +32,19 @@
 <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"> <a class="text-decoration-none fs-6 text-danger font-body-font-family fs-5" href="https://github.com/replikation/MPOA">MPOA REPOSITORY</a></a>
+                <a class="navbar-brand" href="#page-top"> <a class="text-decoration-none fs-6 text-success font-body-font-family fs-5 fw-semibold" href="https://github.com/replikation/MPOA">MPOA REPOSITORY</a></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#quick">Quick Start</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Execution">Execution</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Interpretation">Interpretation</a></li>                      
-                        <li class="nav-item"><a class="nav-link" href="#Citation">Citation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>  
+                        <li class="nav-item fw-semibold"><a class="nav-link" href="#quick">Quick Start</a></li>
+                        <li class="nav-item fw-semibold"><a class="nav-link" href="#installation">Installation</a></li>
+                        <li class="nav-item fw-semibold"><a class="nav-link" href="#Execution">Execution</a></li>
+                        <li class="nav-item fw-semibold"><a class="nav-link" href="#Interpretation">Interpretation</a></li>                      
+                        <li class="nav-item fw-semibold"><a class="nav-link" href="#Citation">Citation</a></li>
+                        <li class="nav-item fw-semibold"><a class="nav-link" href="#faq">FAQ</a></li>  
                     </ul>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                         <div class="h3 my-2 text-info"><br>1. Install Nextflow and Java</div>   
                         <p>To run MPOA the workflow manager <a href="https://nextflow.io/">Nextflow</a> and its dependency java run time (default-jre) needs to be installed.</p>
                         <p>Install java run time via:</p>
-                        <pre><code class="language-bash"> sudo apt install -y default-jre</code></pre>
+                        <pre><code class="language-bash">sudo apt install -y default-jre</code></pre>
                         <p>Install Nextflow (this creates a nextflow file at your current location):</p>
                         <pre><code class="language-bash">curl -s https://get.nextflow.io | bash </code></pre>
                         <p> Optional: Move the executable "nextflow" to the <code> $PATH</code> location (so you can execute it from everywhere):</p>
@@ -121,8 +121,8 @@
                         <div class="h3 my-2  text-info"><br>2. Install Docker</div>   
                         <p>Full <a href="https://docs.docker.com/engine/install/">Docker</a> installation can be found here for  <a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>:<div class=""></div></p>
                         <p>If you never worked with Docker we recommend to install it via apt install:</p>
-                        <pre><code class="language-bash"> sudo apt install -y docker </code></pre>
-                        <pre><code class="language-bash"> sudo usermod -a -G docker $USER </code></pre>
+                        <pre><code class="language-bash">sudo apt install -y docker </code></pre>
+                        <pre><code class="language-bash">sudo usermod -a -G docker $USER </code></pre>
                         <p>Install Nextflow (this creates a nextflow file at your current location):</p>
                         <pre><code class="language-bash">curl -s https://get.nextflow.io | bash </code></pre>
                     </div>
@@ -248,7 +248,7 @@ to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, F
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <h4>
+                            <h4 class="fw-bold">
                                 Execute
                                 <br />
                                 MPOA
@@ -260,7 +260,7 @@ to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, F
                 </ul>
                 <div class="row text-left">
                     <div class="col-md-12 text-center">
-                        <pre><code class="language-bash"> nextflow run replikation/MPOA --fasta '*.fasta' --fastq '*.fastq.gz' -profile local,docker -r 1.4.1</code></pre>
+                        <pre><code class="language-bash">nextflow run replikation/MPOA --fasta '*.fasta' --fastq '*.fastq.gz' -profile local,docker -r '1.4.1'</code></pre>
                     </div>
                 </div>
             </div>
@@ -325,9 +325,9 @@ In default mode, the sequence logo shows five bases up and downstream of the amb
             <div class="container">
                 <h2 class="section-heading ">Citation</h2>
                 <h4>Nanopore sequencing for accurate bacterial outbreak tracing</h5>
-                <p><i>
-                    Mara Lohde, Gabriel E. Wagner, Johanna Dabernig-Heinz, Adrian Viehweger, Sascha D. Braun, Stefan Monecke, Celia Diezel, Claudia Stein, Mike Marquet, Ralf Ehricht, Mathias W. Pletz, Christian Brandt
-                </i></p>
+                <div class="h8">
+                    Mara Lohde, Gabriel E. Wagner, Johanna Dabernig-Heinz, Adrian Viehweger, Sascha D. Braun, Stefan Monecke,<br> Celia Diezel, Claudia Stein, Mike Marquet, Ralf Ehricht, Mathias W. Pletz, Christian Brandt
+                </div>
                 <p><a href="https://doi.org/10.1101/2023.09.15.556300">doi.org/10.1101/2023.09.15.556300</a></p>
 
             </div>
@@ -357,12 +357,12 @@ In default mode, the sequence logo shows five bases up and downstream of the amb
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        How to run the lates release
+                        How to run the latest release
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <strong><a href="https://github.com/replikation/MPOA/releases">MPOA Releases</a></strong><br> If you want to run a specific release version of MPOA, use the <code>-r</code> flag and the version you want to execute. <br>For example: <br><code> nextflow run replikation/MPOA --fasta sample1.fasta --fastq sample1.fastq.gz -profile local,docker -r 1.4.1</code>
+                          <strong><a href="https://github.com/replikation/MPOA/releases">MPOA Releases</a></strong><br> If you want to run a specific release version of MPOA, use the <code>-r</code> flag and the version you want to execute. <br>For example: <br><code> nextflow run replikation/MPOA --fasta '*.fasta' --fastq '*.fastq.gz' -profile local,docker -r '1.4.1'</code>
                         </div>
                       </div>
                     </div>

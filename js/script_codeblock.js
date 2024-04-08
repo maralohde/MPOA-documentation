@@ -1,4 +1,4 @@
-const copyButtonLabel = "Copy Code";
+const copyButtonLabel = "Copy";
 
 // use a class selector if available
 let blocks = document.querySelectorAll("pre");
@@ -24,7 +24,7 @@ async function copyCode(block, button) {
     await navigator.clipboard.writeText(text);
 
     // visual feedback that task is completed
-    button.innerText = "Code Copied";
+    button.innerText = "Copied";
 
     setTimeout(() => {
         button.innerText = copyButtonLabel;
