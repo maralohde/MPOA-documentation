@@ -64,7 +64,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Quick Start</h2>
-                    <h3 class="section-subheading text-muted">If you don't have time, here is the quick summary.</h3>
+                    <h3 class="section-subheading text-muted">Short overview how to run MPOA. For more details see steps below.</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -72,15 +72,15 @@
                             <i class="fas fa-circle fa-stack-2x text-success"></i>
                             <i class="fas fa-download fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Installation</h4>
-                        <p class="text-muted">git clone https://github.com/replikation/MPOA.git</p>
+                        <h4 class="my-3"><a class=" text-decoration-none font-body-font-family" href=#installation>Installation</a></h4>
+                        <p class="text-muted">Install Nextflow, Java and Docker.</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-success"></i>
                             <i class="fas fa-gears fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Run MPOA</h4>
+                        <h4 class="my-3">Execute MPOA</h4>
                         <p class="text-muted">nextflow run replikation/MPOA --fastq '*.fastq.gz' --fasta '*.fasta' -profile local,docker</p>
                     </div>
                     <div class="col-md-4">
@@ -131,7 +131,7 @@
                 <!-- right:Singularity -->
                     <div class="col-md-5">
                         <div class="h3 my-2  text-info"><br>2. Install Singularity </div>
-                        <p>As an alternative to Docker you can also install and use Singularity, e.g. on a HPC. <br><br>Singularity can be installed <a href="https://apptainer.org/documentation/">here</a>.<br><br> Note, that with Singularity the following environment variables are automatically passed to the container to ensure execution on HPCs: <code style="color:black;">HTTPS_PROXY</code>, <code style="color:black;">HTTP_PROXY</code>, <code style="color:black;">http_proxy</code>, <code style="color:black;">https_proxy</code>, <code style="color:black;">FTP_PROXY</code> and <code style="color:black;">ftp_proxy</code>.</p> 
+                        <p>As an alternative to Docker you can also install and use Singularity, e.g. on a HPC. <br><br>To use Singularity follow the installion steps <a href="https://apptainer.org/documentation/">here</a>.<br><br> Note, that with Singularity the following environment variables are automatically passed to the container to ensure execution on HPCs: <code style="color:black;">HTTPS_PROXY</code>, <code style="color:black;">HTTP_PROXY</code>, <code style="color:black;">http_proxy</code>, <code style="color:black;">https_proxy</code>, <code style="color:black;">FTP_PROXY</code> and <code style="color:black;">ftp_proxy</code>.</p> 
                     </div>
             <!-- last part -->
                     <div class="row text-left">
@@ -277,7 +277,7 @@ to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, F
                 <div class="row text-left">
                     <div class="col-md-12">
                         <div class="h3 my-2 text-info"><br>CSV file with summary of ambiguous/masked positions</div>   
-                        <p> The default output is a CSV file summarizing the masked positions per sample. You found the information on how many positions were masked by the respective IUPAC base (N, W, S, M, K, R, Y, B, D, H, V) in <code>  masked_bases_summary.csv</code> . Depth masking (N) is performed if fewer than ten bases are present at one position. The masked positions on the entire genome and only on the chromosome are shown for each sample.</p>
+                        <p> The default output is a CSV file summarizing the masked positions per sample. You will find the information on how many positions were masked by the respective IUPAC base (N, W, S, M, K, R, Y, B, D, H, V) in <code>masked_bases_summary.csv</code> . Depth masking (N) is performed if fewer than ten bases are present at one position. The masked positions on the entire genome and only on the chromosome are shown for each sample. <p class="fw-semibold">For example:</p>In sample2, we have 3108 positions masked by N on all contigs (genome), which means these positions exhibit a sequencing depth below 10. Let's take a look only at the chromosome contig. We see a massive reduction in masked and especially depth-masked positions, so we used only the chromosomal contig for our analysis. </p></p>
                     </div>
                 </div>
                 <div class ="row text-left">
@@ -293,19 +293,21 @@ to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, F
                 </div>
             <!-- Sequence Logo -->
                 <div class="row text-left">
-                    <div class="h3 my-2  text-info"><br>Sequence Logo <td></div> 
+                    <div class="h3 my-2  text-info"><br>Sequence Logo<td></div> 
                 <!-- left:Figure -->
                     <div class="col-md-6">
                         <img src="assets/BK16641_k14.svg" class="img-fluid rounded mx-auto" alt="Sequence Logo">
                     </div>
                 <!-- right:Text -->
                     <div class="col-md-6">
-                        <div class="h3 my-2  text-info"><br> </div>    
+                        <div class="h3 my-2 text-info"><br> </div>    
                         <p> 
                             A graphical presentation of all ambiguous positions and their surrounding bases per analyzed sample. The overall height of each stack indicates the sequence conservation at a position (measured in bits)
 , whereas the height of symbols within the stack reflects the relative frequency of the corresponding
 base at that position.
 In default mode, the sequence logo shows five bases up and downstream of the ambiguous position masked by IUPAC-Code. The length of the logo can be modified using the <code>--motif</code> flag.  
+<p class="fw-semibold">For example:</p>
+For sample BK16641_k14 we have 233 masked positions by R and 225 masked positions by Y. For all reagions masked by R and Y we see rough conserved motives RACG and CGTY.
                         </p>
                     </div>
             <!-- Frequency Plot -->                
@@ -313,7 +315,7 @@ In default mode, the sequence logo shows five bases up and downstream of the amb
                 <div class="h3 my-2  text-info"><br>Frequency Plot</div>   
                 <p>
                 A violin chart is created when the <code> --frequency </code> flag is used. The plot is build from all analyzed samples of the run. For each ambiguous position found by aligning reads to their reference, the percentage occurrence of the bases within the reads is calculated. The orientation of the strand (forward or reverse) is determined and displayed as data points in two plots per position.                </p>
-                <img src="assets/KP_33_kit14_minimap_frequency.svg" class="img-fluid rounded mx-auto" alt="Frequency Plot">
+                <img src="assets/KP_33_kit14_minimap_frequency.svg" class="img-fluid rounded center" alt="Frequency Plot">
             </div>
             <!-- End Section  -->
                 </div>                
