@@ -303,23 +303,27 @@ to ensure execution on HPCs: HTTPS_PROXY, HTTP_PROXY, http_proxy, https_proxy, F
                         <div class="h3 my-2 text-info"><br> </div>    
                         <p> 
                             A graphical presentation of all ambiguous positions and their surrounding bases per analyzed sample. The overall height of each stack indicates the sequence conservation at a position (measured in bits)
-, whereas the height of symbols within the stack reflects the relative frequency of the corresponding
-base at that position.
-In default mode, the sequence logo shows five bases up and downstream of the ambiguous position masked by IUPAC-Code. The length of the logo can be modified using the <code>--motif</code> flag.  
-<p class="fw-semibold">For example:</p>
-For sample BK16641_k14 we have 233 masked positions by R and 225 masked positions by Y. For all reagions masked by R and Y we see rough conserved motives RACG and CGTY.
+                            , whereas the height of symbols within the stack reflects the relative frequency of the corresponding
+                            base at that position.
+                            In default mode, the sequence logo shows five bases up and downstream of the ambiguous position masked by IUPAC-Code. The length of the logo can be modified using the <code>--motif</code> flag.  
+                            <p class="fw-semibold">For example:</p>
+                            For sample BK16641_k14 we have 233 masked positions by R and 225 masked positions by Y. For all reagions masked by R and Y we see rough conserved motives RACG and CGTY.
                         </p>
                     </div>
             <!-- Frequency Plot -->                
-            <div class="col-md-12 center">
-                <div class="h3 my-2  text-info"><br>Frequency Plot</div>   
-                <p>
-                A violin chart is created when the <code> --frequency </code> flag is used. The plot is build from all analyzed samples of the run. For each ambiguous position found by aligning reads to their reference, the percentage occurrence of the bases within the reads is calculated. The orientation of the strand (forward or reverse) is determined and displayed as data points in two plots per position.                </p>
-                <img src="assets/KP_33_kit14_minimap_frequency.svg" class="img-fluid rounded center" alt="Frequency Plot">
-            </div>
+                <div class="col-md-12 center">
+                    <div class="h3 my-2  text-info"><br>Frequency Plot</div>   
+                        <p>
+                        A violin chart is created when the <code> --frequency </code> flag is used. The plot is build from all analyzed samples of the run. For each ambiguous position found by aligning reads to their reference, the percentage occurrence of the bases within the reads is calculated. The orientation of the strand (forward or reverse) is determined and displayed as data points in two plots per position.  </p>
+                        <img src="assets/KP_33_kit14_minimap_frequency.svg" class="img-fluid rounded center" alt="Frequency Plot">
+                        <p></p>
+                        <p class="fw-semibold">For example:</p>
+                        This plot comprises 6,556 ambiguous positions from 33 samples. Each dot represents a base occurrence within the respective base combination at the ambiguous position. The main errors exist when the Basecaller need to decide between Purin bases (A and G) masked by IUPAC Code R and Pyrimidin bases (T and C) masked by IUPAC code Y. 3,311 positions were masked by R. The plot differntiate between forward and reverse strand. On the reverse strand Guanine is more frequently called (100-95%) as Adenine (0-5%). This leads to the conclusion that Guanine is the correct base in this position. It's not that clear on the forward strand. The basecaller mainly calles Adenine in this position and less frequent Guanine. This base ratio in the reads can results in erroneous assemblies. Since it is a strand-specific error, it points to base-modification. 
+                        </p>
+                    </div>
             <!-- End Section  -->
-                </div>                
-            </div>
+                    </div>                
+                </div>
         </section>
 
 <!-- Citation-->
@@ -331,7 +335,8 @@ For sample BK16641_k14 we have 233 masked positions by R and 225 masked position
                     Mara Lohde, Gabriel E. Wagner, Johanna Dabernig-Heinz, Adrian Viehweger, Sascha D. Braun, Stefan Monecke,<br> Celia Diezel, Claudia Stein, Mike Marquet, Ralf Ehricht, Mathias W. Pletz, Christian Brandt
                 </div>
                 <p><a href="https://doi.org/10.1101/2023.09.15.556300">doi.org/10.1101/2023.09.15.556300</a></p>
-
+                <p></p>
+                <p>If you are interested in more work of our group:<a href="https://case-group.github.io/"> click here</a></p>
             </div>
         </section>
 
